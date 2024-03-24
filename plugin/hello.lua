@@ -1,4 +1,4 @@
-print("stnv debug module loaded. use :lua create_vsplit()")
+print("stnv debug module loaded. use :lua create_debug_split()")
 
 attach_to_buffer = function(output_bufnr, pattern, command)
 vim.api.nvim_create_autocmd("BufWritePost", {
@@ -31,7 +31,7 @@ end
 
 
 
-create_vsplit = function()
+create_debug_split = function()
     -- Save the current buffer number
     local current_bufnr = vim.api.nvim_get_current_buf()
     local fname =  vim.fn.expand('%:t')
@@ -43,7 +43,7 @@ create_vsplit = function()
       ["lua"] = "lua ",
     }
     -- Create a vsplit
-    vim.cmd('vsplit new_window')
+    vim.cmd('vsplit debug_window')
     local new_bufnr = vim.api.nvim_get_current_buf()
     
     -- Go back to the original buffer
@@ -55,4 +55,5 @@ create_vsplit = function()
 end
 
 -- attach_to_buffer(3, "*.py", { "python3", "test.py" })
+-- attach_to_buffer(3, "*.go", { "go run", "main.go" })
 -- attach_to_buffer(3, "*.lua", { "lua", "filename.lua" })
