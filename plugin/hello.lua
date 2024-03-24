@@ -21,4 +21,14 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 })
 end
 
+print_buffer = function()
+  print(vim.api.nvim_get_current_buf())
+end
+
+stnv_help = function()
+  print('example:lua attach_to_buffer(3, "*.py", { "python3", "test.py" })')
+
+
+
 -- attach_to_buffer(3, "*.py", { "python3", "test.py" })
+-- attach_to_buffer(3, "*.lua", { "lua", "filename.lua" })
