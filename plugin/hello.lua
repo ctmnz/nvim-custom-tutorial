@@ -33,7 +33,7 @@ end
 
 create_debug_split = function()
     -- Save the current buffer number
-    local current_bufnr = vim.api.nvim_get_current_buf()
+    local current_win = vim.api.nvim_get_current_win()
     local fname =  vim.fn.expand('%:t')
     local extension = vim.fn.expand('%:e')
 
@@ -51,6 +51,7 @@ create_debug_split = function()
     -- Return the buffer number of the new split
     print(new_bufnr, "*."..extension ,lang_dict[extension]..fname)
     attach_to_buffer(new_bufnr, "*."..extension, lang_dict[extension]..fname)
+    vim.api.nvim_set_current_win(current_win)
     return new_bufnr
 end
 
