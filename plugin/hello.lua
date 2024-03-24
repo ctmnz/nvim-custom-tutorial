@@ -27,7 +27,7 @@ end
 
 stnv_help = function()
   print('example:lua attach_to_buffer(3, "*.py", { "python3", "test.py" })')
-
+end
 
 
 -- attach_to_buffer(3, "*.py", { "python3", "test.py" })
