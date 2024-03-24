@@ -1,6 +1,6 @@
 print("Hello there!")
 
-local attach_to_buffer = function(output_bufnr, pattern, command)
+attach_to_buffer = function(output_bufnr, pattern, command)
 vim.api.nvim_create_autocmd("BufWritePost", {
   group = vim.api.nvim_create_augroup("Luapocs", { clear = true }),
   pattern = pattern,
