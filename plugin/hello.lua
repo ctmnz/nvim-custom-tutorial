@@ -30,7 +30,6 @@ debug_help = function()
 end
 
 
-
 create_debug_split = function()
     -- Save the current buffer number
     local current_win = vim.api.nvim_get_current_win()
@@ -57,4 +56,10 @@ end
 
 -- attach_to_buffer(3, "*.py", { "python3", "test.py" })
 -- attach_to_buffer(3, "*.go", { "go run", "main.go" })
--- attach_to_buffer(3, "*.lua", { "lua", "filename.lua" })
+-- attach_to_buffer(4, "*.lua", { "lua", "filename.lua" })
+
+open_buffer_in_new_tab = function()
+  local current_buffer_number = vim.api.nvim_get_current_buf()
+  vim.cmd('tab sb'..current_buffer_number)
+end
+
