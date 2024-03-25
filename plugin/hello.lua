@@ -62,4 +62,4 @@ open_buffer_in_new_tab = function()
   local current_buffer_number = vim.api.nvim_get_current_buf()
   vim.cmd('tab sb'..current_buffer_number)
 end
-
+vim.api.nvim_set_keymap('n', '<A-t>', ':lua open_buffer_in_new_tab()<CR>', {noremap = true})
