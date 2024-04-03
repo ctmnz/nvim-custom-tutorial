@@ -37,7 +37,7 @@ create_debug_split = function()
     local extension = vim.fn.expand('%:e')
 
     local lang_dict = {
-      ["py"] = "python3 ",
+      ["py"] = "python ",
       ["go"] = "go run",
       ["lua"] = "lua ",
     }
